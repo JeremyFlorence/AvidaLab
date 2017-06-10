@@ -1,0 +1,42 @@
+* {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+h1{
+    color:#bc0e03;
+    font-weight: bold;
+    font-size: 300%;
+}
+
+body {
+    background-image: url("../images/avida.jpg");
+    background-size: 100% 1000px;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+.text {
+    padding-top: 10.3cm;
+}
+
+h2 {
+    color: #1067e1;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 150%;
+}
+
+p {
+    color: #241557 ;
+    font-size: 100%;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}

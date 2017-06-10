@@ -1,0 +1,52 @@
+{%extends "base.html" %}
+
+    {% block title %}<title id="title">Projects</title>{% endblock title %}
+
+    {% block content %}
+
+    <div>
+        <h1>Existing Projects:</h1>
+        <!-- List of created projects -->
+        {% if projects %}
+
+        <div class="col">
+           <form action="{% url 'experiments' %}" method="post">
+                {% csrf_token %}
+				{% for project in projects %}
+            		<input type="radio" name="project" value={{project.pk}} > {{ project.name }} <br>
+				{% endfor %}
+			
+  				<input type="submit" value="Submit">
+			</form>
+		</div>
+        {% else %}
+            <p>No projects.</p>
+        {% endif %}
+    </div>
+
+    <div>
+        <h1>Start a new project</h2>
+        <!-- Form for creating a new project -->
+        <form action="{% url 'projects' %}" method="post" enctype="multipart/form-data">
+            <fieldset>
+              name:
+              {{ form.name }}
+              {{ form.name.errors }}
+            
+            
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+
+            <p>{{ form.dataFile.label_tag }}</p>
+
+            <p>
+                {{ form.dataFile.errors }}
+                {{ form.dataFile }}
+            </p>
+
+            <p><input type="submit" value="Upload"/></p>
+            </fieldset>
+
+        </form>
+    </div>
+    {% endblock content %}

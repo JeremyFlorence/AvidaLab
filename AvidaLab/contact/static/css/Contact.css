@@ -1,0 +1,108 @@
+* {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+h1 {
+	font-size: 220%;
+}
+
+body {
+    background-image: url("../images/Background.jpg");
+    background-size: 100% 1000px;
+    background-repeat: no-repeat;
+	background-attachment:fixed;
+}
+
+.text {
+    padding-top: 1cm;
+}
+.main{
+	padding-top: 1cm;
+}
+
+.main-text {
+	background-size: auto;
+	padding-bottom: 1cm;
+}
+
+h2 {
+    color: #1067e1;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 150%;
+}
+
+p {
+	font-family: "Georgia", serif;
+    color: #241557 ;
+    font-size: 100%;
+}
+
+/*---------- Navigation Bar CSS ----------*/
+nav {
+	background-color: black;
+	position: center;
+}
+
+.nav-link {
+	width: 20px;
+	height: 20px;
+	padding-right: 12px;
+}
+
+#navbar, #navbar ul{
+	list-style: none;
+}
+
+#navbar>li{
+	display: inline-block;
+}
+
+#navbar li a{
+	display: block;
+	height: 20px;
+	width: 200px;
+	padding: 10px;
+	text-decoration: none;
+}
+
+#navbar>li>a{
+	background-color: #000000;
+	color: #fff;
+}
+
+/* if (hidden) submenu exists */
+#linklist{
+	position: absolute;
+	background-color: white;
+	z-index: 9999;
+	display: none;
+	padding: 0;
+	margin: 0;
+}
+
+#linklist>li>a{
+	color: #121;
+	width: auto;
+}
+
+#navbar li a:hover{
+	border: 1px solid black;
+	background-color: #00C2FF;
+	color: white;
+}
+
+#navbar li:hover #linklist{
+	display: block;
+}
+
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}

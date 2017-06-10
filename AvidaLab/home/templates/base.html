@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html> 
+    <head>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/Contact.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        {% block title %}{% endblock title %}
+    </head>
+    
+    <body>
+        <div class="text">
+            <img src="{% static 'images/AvidaLab Header.png' %}" alt="Head Image">
+			
+			
+        </div>
+		<nav>
+			<!--- Navigation Bar --->
+			<ul id="navbar">
+				<li><a id="Home-link" href="/"><img src="{% static 'images/Home.svg' %}" class="nav-link">Home</a></li>
+				<li><a id="Contact-link" href="/contact"><img src="{% static 'images/Contact.svg' %}" class="nav-link">Contact</a></li>
+				<li>
+					<a id="Projects-link" href="/projects/"><img src="{% static 'images/Projects.svg' %}" class="nav-link">Projects</a>
+				</li>
+				<li><a href="https://www.potsdam.edu"><img src="{% static 'images/SUNY Potsdam.svg' %}" class="nav-link">SUNY Potsdam</a></li>
+			</ul>
+		</nav>
+		
+        {% block content %}
+        {% endblock %}
+        
+	</body>
+</html>

@@ -1,0 +1,31 @@
+{%extends "base.html" %}
+
+    {% block title %}<title id="title">Data</title>{% endblock title %}
+
+    {% block content %}
+
+    <p>
+		<h1>Please select the data variables</h1>
+	</p>
+
+    <div class="col">
+			<form action="{% url 'runs' %}" method="post">{% csrf_token %}
+				<input type="hidden" name="project" value={{projectPK}}>
+				<input type="hidden" name="experiment" value={{experiment}}>
+				<input type="hidden" name="data_file" value={{data_file}}>
+
+                <h3>Variable 1 (x-axis) </h3>
+                {% for header in headers %}
+                    <input type="radio" name="var1" value={{header}}> {{header}} <br>
+                {% endfor %}
+
+                <h3>Variable 2 (y-axis) </h3>
+                {% for header in headers %}
+                    <input type="radio" name="var2" value={{header}}> {{header}} <br>
+                {% endfor %}
+
+				<input type="submit" value="Submit">
+			</form>
+    </div>
+
+    {% endblock content %}

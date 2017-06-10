@@ -1,0 +1,21 @@
+*.pyc
+.idea/
+geckodriver.log
+db.sqlite3
+AvidaLab/AvidaLab/__pycache__/
+AvidaLab/home/__pycache__/
+AvidaLab/home/migrations/__pycache__/
+<<<<<<< HEAD
+*.zip
+*.gz
+*.tar
+*.rar
+AvidaLab/projects/uploads/
+=======
+*.gz
+*.tar
+*.rar
+AvidaLab/projects/uploads/projects/
+AvidaLab/projects/data/
+>>>>>>> FileUnzipping
+

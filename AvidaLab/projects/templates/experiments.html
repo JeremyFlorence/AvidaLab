@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+    {% block title %}<title id="title">Experiments</title> {% endblock title %}
+
+    {% block content  %}
+	
+	<p>
+		<h1>Please Select the Experiment</h1>
+	</p>
+	<p>
+		<div class="col">
+           <form action="{% url 'data' %}" method="post">
+			   	{% csrf_token %}
+				<input type="hidden" name="project" value={{projectPK}}>
+				<h3>Experiments</h3>
+				{% for experiment in experiments|safeseq %}
+            		<input type="radio" name="experiment" value={{experiment}} > {{ experiment }} <br>
+				{% endfor %}
+
+				<h3>Files</h3>
+					<input type="radio" name="data_file" value="average.dat" > average <br>
+					<input type="radio" name="data_file" value="count.dat" > count <br>
+					<input type="radio" name="data_file" value="dominant.dat" > dominant <br>
+					<input type="radio" name="data_file" value="stats.dat" > stats <br>
+					<input type="radio" name="data_file" value="tasks.dat" > tasks <br>
+					<input type="radio" name="data_file" value="tasks_exe.dat" > tasks_exe <br>
+					<input type="radio" name="data_file" value="task_quality.dat" > task_quality <br>
+					<input type="radio" name="data_file" value="time.dat" > time <br>
+			
+  				<input type="submit" value="Submit">
+
+			</form>
+		</div>
+	</p>
+
+    {% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+    {% block title %}<title id="title">Runs</title> {% endblock title %}
+
+    {% block content  %}
+	
+	<p>
+		<h1>Please select the runs</h1>
+	</p>
+	<p>
+		<div class="col">
+			<form action="{% url 'analysis' %}" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="project" value={{projectPK}}>
+				<input type="hidden" name="experiment" value={{experiment}}>
+				<input type="hidden" name="data_file" value={{data_file}}>
+				<input type="hidden" name="var1" value={{var1}}>
+				<input type="hidden" name="var2" value={{var2}}>
+
+						<h3>{{experiment}}</h3>
+						{% for run in runs %}
+						<input type="checkbox" name="run" value={{run}} > {{run}}<br>
+						{% endfor %}
+
+
+				<script language="JavaScript">
+				function toggle(source) {
+					checkboxes = document.getElementsByName('run');
+					for(var i=0, n=checkboxes.length;i<n;i++) {
+						checkboxes[i].checked = source.checked;
+					}
+				}
+				</script>
+
+				<input type="checkbox" onClick="toggle(this)" /> Select All<br/>
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+	</p>
+
+    {% endblock content %}
