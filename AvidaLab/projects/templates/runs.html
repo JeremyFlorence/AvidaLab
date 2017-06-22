@@ -22,20 +22,18 @@
 						<input type="checkbox" name="run" value={{run}} > {{run}}<br>
 						{% endfor %}
 
-
-				<script language="JavaScript">
-				function toggle(source) {
-					checkboxes = document.getElementsByName('run');
-					for(var i=0, n=checkboxes.length;i<n;i++) {
-						checkboxes[i].checked = source.checked;
-					}
-				}
-				</script>
-
 				<input type="checkbox" onClick="toggle(this)" /> Select All<br/>
 				<input type="submit" value="Submit">
 			</form>
 		</div>
 	</p>
 
-    {% endblock content %}
+	<script language="JavaScript">
+		function toggle(source) {
+			checkboxes = document.getElementsByName('run');
+			for(var i=0, n=checkboxes.length;i<n;i++) {
+				checkboxes[i].checked = source.checked;
+			}
+		}
+	</script>
+{% endblock content %}
