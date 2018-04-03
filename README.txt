@@ -25,7 +25,7 @@ PACKAGES
 
 RUNNING AVIDALAB CLOUD 
 
-1. Clone the project from https://github.com/florenjr196/AvidaLab.git.
+1. Clone the project from https://github.com/JeremyFlorence/AvidaLab.git
 2. Install all required packages via pip.
 3. Open a terminal in the directory containing manage.py, and run the following command "python manage.py runserver"
 4. Open a browser and go to to "localhost:8000".
